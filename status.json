@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-17T15:40:56+05:30",
-  "interval": 900,
+  "updated": "2026-10-17T15:46:04+05:30",
+  "interval": 300,
   "isps": [
     {
       "site": "Calicut",
@@ -47,7 +47,7 @@
       "name": "KERALA VISION",
       "ip": "103.190.195.129",
       "status": "UP",
-      "latency_ms": 37,
+      "latency_ms": 34,
       "since": "2026-10-17T15:25:33+05:30"
     }
   ],
