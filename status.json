@@ -1,0 +1,1 @@
+{"updated":"2026-10-17T12:00:00+05:30","interval":30,"isps":[{"site":"Calicut","name":"BSNL","status":"UP","latency_ms":24,"since":"2026-10-17T09:00:00+05:30"},{"site":"Calicut","name":"JIO","status":"DOWN","latency_ms":null,"since":"2026-10-17T11:40:00+05:30"}],"events":[{"time":"2026-10-17T11:40:00+05:30","site":"Calicut","isp":"JIO","event":"DOWN"}]}

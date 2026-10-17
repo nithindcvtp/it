@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISP Status</title>
+<style>
+:root{--bg:#f4f5f7;--card:#fff;--text:#1c1f23;--muted:#6b7280;--up:#2e7d32;--down:#c62828;--wait:#888;--line:#e5e7eb}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1d2025;--text:#eceff3;--muted:#9aa3af;--line:#2c3037}}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text)}
+main{max-width:760px;margin:0 auto;padding:16px}
+#banner{border-radius:12px;padding:18px;color:#fff;font-size:1.25rem;font-weight:600;background:var(--wait)}
+#banner small{display:block;font-weight:400;font-size:.85rem;opacity:.9;margin-top:4px}
+h2{font-size:1rem;margin:22px 0 8px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.row{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:8px}
+.dot{width:14px;height:14px;border-radius:50%;flex:none;background:var(--wait)}
+.UP .dot{background:var(--up)}.DOWN .dot{background:var(--down)}
+.name{flex:1;font-weight:600}.name span{display:block;font-weight:400;font-size:.8rem;color:var(--muted)}
+.tag{font-weight:700;font-size:.85rem}.UP .tag{color:var(--up)}.DOWN .tag{color:var(--down)}
+.lat{color:var(--muted);font-size:.85rem;min-width:56px;text-align:right}
+ul{list-style:none;padding:0;margin:0}
+li{padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+li b.DOWN{color:var(--down)}li b.RESTORED{color:var(--up)}
+.empty{color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <div id="banner">Loading…</div>
+  <h2>Links</h2><div id="links"></div>
+  <h2>Recent events</h2><ul id="events"><li class="empty">No events yet</li></ul>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+const fmt = t => new Date(t).toLocaleString();
+const ago = t => { const m = Math.round((Date.now() - new Date(t)) / 60000); return m < 1 ? "just now" : m + " min ago"; };
+
+async function load() {
+  const banner = $("banner");
+  try {
+    const r = await fetch("status.json?t=" + Date.now(), {cache: "no-store"});
+    const d = await r.json();
+    const stale = (Date.now() - new Date(d.updated)) > 20 * 60000;
+    const down = d.isps.filter(i => i.status === "DOWN");
+    if (stale) {
+      banner.style.background = "#888";
+      banner.innerHTML = "Monitor offline?<small>No update since " + fmt(d.updated) + " (" + ago(d.updated) + ")</small>";
+    } else if (down.length) {
+      banner.style.background = "var(--down)";
+      banner.innerHTML = "⚠ DOWN: " + down.map(i => i.site + " " + i.name).join(", ") +
+        "<small>Updated " + ago(d.updated) + "</small>";
+    } else {
+      banner.style.background = "var(--up)";
+      banner.innerHTML = "✔ All links up<small>Updated " + ago(d.updated) + "</small>";
+    }
+    $("links").innerHTML = d.isps.map(i =>
+      '<div class="row ' + i.status + '"><span class="dot"></span>' +
+      '<div class="name">' + i.site + " · " + i.name + "<span>since " + fmt(i.since) + "</span></div>" +
+      '<span class="lat">' + (i.latency_ms == null ? "–" : i.latency_ms + " ms") + "</span>" +
+      '<span class="tag">' + i.status + "</span></div>").join("");
+    $("events").innerHTML = d.events.length
+      ? d.events.map(e => "<li><b class='" + e.event + "'>" + e.event + "</b> " + e.site + " " + e.isp +
+          ' <span class="empty">· ' + fmt(e.time) + "</span></li>").join("")
+      : '<li class="empty">No events yet</li>';
+  } catch (e) {
+    banner.style.background = "#888";
+    banner.innerHTML = "Status unavailable<small>status.json not found or unreadable</small>";
+  }
+}
+load(); setInterval(load, 30000);
+</script>
+</body>
+</html>
