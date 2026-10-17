@@ -1,0 +1,62 @@
+{
+  "updated": "2026-10-17T14:46:49+05:30",
+  "interval": 3000,
+  "isps": [
+    {
+      "site": "Calicut",
+      "name": "BSNL",
+      "ip": "117.247.180.184",
+      "status": "UP",
+      "latency_ms": 1,
+      "since": "2026-10-17T14:39:02+05:30"
+    },
+    {
+      "site": "Calicut",
+      "name": "VI",
+      "ip": "118.185.93.137",
+      "status": "UP",
+      "latency_ms": 1,
+      "since": "2026-10-17T14:39:02+05:30"
+    },
+    {
+      "site": "Calicut",
+      "name": "JIO",
+      "ip": "115.246.242.210",
+      "status": "DOWN",
+      "latency_ms": null,
+      "since": "2026-10-17T14:39:02+05:30"
+    },
+    {
+      "site": "Calicut",
+      "name": "ASIANTE",
+      "ip": "202.164.150.19",
+      "status": "UP",
+      "latency_ms": 1,
+      "since": "2026-10-17T14:39:02+05:30"
+    },
+    {
+      "site": "Kodiyathur",
+      "name": "BSNL",
+      "ip": "117.247.179.119",
+      "status": "UP",
+      "latency_ms": 86,
+      "since": "2026-10-17T14:39:02+05:30"
+    },
+    {
+      "site": "Kodiyathur",
+      "name": "KERALA VISION",
+      "ip": "103.190.195.129",
+      "status": "UP",
+      "latency_ms": 49,
+      "since": "2026-10-17T14:39:02+05:30"
+    }
+  ],
+  "events": [
+    {
+      "time": "2026-10-17T14:39:02+05:30",
+      "site": "Calicut",
+      "isp": "JIO",
+      "event": "DOWN"
+    }
+  ]
+}
