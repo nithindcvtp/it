@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T23:41:13+05:30",
+  "updated": "2026-10-20T23:51:36+05:30",
   "interval": 300,
   "isps": [
     {
@@ -7,7 +7,7 @@
       "name": "BSNL",
       "ip": "117.247.180.184",
       "status": "UP",
-      "latency_ms": 5,
+      "latency_ms": 1,
       "since": "2026-10-17T15:25:33+05:30"
     },
     {
@@ -15,7 +15,7 @@
       "name": "VI",
       "ip": "118.185.93.137",
       "status": "UP",
-      "latency_ms": 5,
+      "latency_ms": 1,
       "since": "2026-10-17T15:25:33+05:30"
     },
     {
@@ -31,7 +31,7 @@
       "name": "ASIANTE",
       "ip": "202.164.150.19",
       "status": "UP",
-      "latency_ms": 5,
+      "latency_ms": 1,
       "since": "2026-10-17T15:25:33+05:30"
     },
     {
@@ -39,7 +39,7 @@
       "name": "BSNL",
       "ip": "117.247.179.119",
       "status": "UP",
-      "latency_ms": 95,
+      "latency_ms": 26,
       "since": "2026-10-19T17:09:01+05:30"
     },
     {
@@ -47,7 +47,7 @@
       "name": "KERALA VISION",
       "ip": "103.190.195.129",
       "status": "UP",
-      "latency_ms": 44,
+      "latency_ms": 10,
       "since": "2026-10-17T15:25:33+05:30"
     }
   ],
