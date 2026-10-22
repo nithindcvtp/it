@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T00:40:38+05:30",
+  "updated": "2026-10-23T00:51:01+05:30",
   "interval": 300,
   "isps": [
     {
@@ -22,9 +22,9 @@
       "site": "Calicut",
       "name": "JIO",
       "ip": "115.246.242.210",
-      "status": "UP",
-      "latency_ms": 2,
-      "since": "2026-10-23T00:40:38+05:30"
+      "status": "DOWN",
+      "latency_ms": null,
+      "since": "2026-10-23T00:51:01+05:30"
     },
     {
       "site": "Calicut",
@@ -52,6 +52,12 @@
     }
   ],
   "events": [
+    {
+      "time": "2026-10-23T00:51:01+05:30",
+      "site": "Calicut",
+      "isp": "JIO",
+      "event": "DOWN"
+    },
     {
       "time": "2026-10-23T00:40:38+05:30",
       "site": "Calicut",
