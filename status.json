@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T17:29:36+05:30",
+  "updated": "2026-10-23T17:40:01+05:30",
   "interval": 300,
   "isps": [
     {
@@ -22,9 +22,9 @@
       "site": "Calicut",
       "name": "JIO",
       "ip": "115.246.242.210",
-      "status": "UP",
-      "latency_ms": 1,
-      "since": "2026-10-23T17:29:36+05:30"
+      "status": "DOWN",
+      "latency_ms": null,
+      "since": "2026-10-23T17:40:01+05:30"
     },
     {
       "site": "Calicut",
@@ -47,11 +47,17 @@
       "name": "KERALA VISION",
       "ip": "103.190.195.129",
       "status": "UP",
-      "latency_ms": 37,
+      "latency_ms": 36,
       "since": "2026-10-22T11:19:02+05:30"
     }
   ],
   "events": [
+    {
+      "time": "2026-10-23T17:40:01+05:30",
+      "site": "Calicut",
+      "isp": "JIO",
+      "event": "DOWN"
+    },
     {
       "time": "2026-10-23T17:29:36+05:30",
       "site": "Calicut",
@@ -345,12 +351,6 @@
       "site": "Calicut",
       "isp": "JIO",
       "event": "DOWN"
-    },
-    {
-      "time": "2026-10-23T02:29:26+05:30",
-      "site": "Calicut",
-      "isp": "JIO",
-      "event": "RESTORED"
     }
   ]
 }
