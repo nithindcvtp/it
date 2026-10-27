@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27T21:56:56+05:30",
+  "updated": "2026-10-27T22:07:13+05:30",
   "interval": 300,
   "isps": [
     {
@@ -39,19 +39,25 @@
       "name": "BSNL",
       "ip": "117.247.179.119",
       "status": "UP",
-      "latency_ms": 9,
+      "latency_ms": 19,
       "since": "2026-10-27T18:32:05+05:30"
     },
     {
       "site": "Kodiyathur",
       "name": "KERALA VISION",
       "ip": "103.190.195.129",
-      "status": "UP",
-      "latency_ms": 53,
-      "since": "2026-10-27T18:32:05+05:30"
+      "status": "DOWN",
+      "latency_ms": null,
+      "since": "2026-10-27T22:07:13+05:30"
     }
   ],
   "events": [
+    {
+      "time": "2026-10-27T22:07:13+05:30",
+      "site": "Kodiyathur",
+      "isp": "KERALA VISION",
+      "event": "DOWN"
+    },
     {
       "time": "2026-10-27T20:34:42+05:30",
       "site": "Calicut",
