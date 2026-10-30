@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30T18:02:33+05:30",
+  "updated": "2026-10-30T18:04:13+05:30",
   "interval": 30,
   "paused_all": false,
   "isps": [
@@ -42,9 +42,10 @@
     {
       "site": "Kodiyathur",
       "name": "KERALA VISION",
-      "status": "UP",
-      "latency_ms": 10,
-      "since": "2026-10-30T17:55:16+05:30"
+      "status": "PAUSED",
+      "latency_ms": null,
+      "since": "2026-10-30T18:04:13+05:30",
+      "paused_until": "2026-10-30T18:34:13+05:30"
     }
   ],
   "events": [
