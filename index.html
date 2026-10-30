@@ -15,9 +15,9 @@ main{max-width:760px;margin:0 auto;padding:16px}
 h2{font-size:1rem;margin:22px 0 8px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
 .row{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:8px}
 .dot{width:14px;height:14px;border-radius:50%;flex:none;background:var(--wait)}
-.UP .dot{background:var(--up)}.DOWN .dot{background:var(--down)}
+.UP .dot{background:var(--up)}.DOWN .dot{background:var(--down)}.PAUSED .dot{background:#3b6fd4}.WAIT .dot{background:#e0a100}
 .name{flex:1;font-weight:600}.name span{display:block;font-weight:400;font-size:.8rem;color:var(--muted)}
-.tag{font-weight:700;font-size:.85rem}.UP .tag{color:var(--up)}.DOWN .tag{color:var(--down)}
+.tag{font-weight:700;font-size:.85rem}.UP .tag{color:var(--up)}.DOWN .tag{color:var(--down)}.PAUSED .tag{color:#3b6fd4}.WAIT .tag{color:#e0a100}
 .lat{color:var(--muted);font-size:.85rem;min-width:56px;text-align:right}
 ul{list-style:none;padding:0;margin:0}
 li{padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem}
@@ -41,24 +41,31 @@ async function load() {
   try {
     const r = await fetch("status.json?t=" + Date.now(), {cache: "no-store"});
     const d = await r.json();
-    const stale = (Date.now() - new Date(d.updated)) > 20 * 60000;
+    const staleMin = Math.max(20, ((d.interval || 30) * 3) / 60 + 2);
+    const stale = (Date.now() - new Date(d.updated)) > staleMin * 60000;
     const down = d.isps.filter(i => i.status === "DOWN");
+    const paused = d.isps.filter(i => i.status === "PAUSED").length;
+    const waiting = d.isps.filter(i => i.status === "WAIT").length;
+    const note = paused ? " · " + paused + " paused" : "";
     if (stale) {
       banner.style.background = "#888";
       banner.innerHTML = "Monitor offline?<small>No update since " + fmt(d.updated) + " (" + ago(d.updated) + ")</small>";
     } else if (down.length) {
       banner.style.background = "var(--down)";
       banner.innerHTML = "⚠ DOWN: " + down.map(i => i.site + " " + i.name).join(", ") +
-        "<small>Updated " + ago(d.updated) + "</small>";
+        "<small>Updated " + ago(d.updated) + note + "</small>";
+    } else if (waiting) {
+      banner.style.background = "#e0a100";
+      banner.innerHTML = "Checking links…<small>Updated " + ago(d.updated) + note + "</small>";
     } else {
       banner.style.background = "var(--up)";
-      banner.innerHTML = "✔ All links up<small>Updated " + ago(d.updated) + "</small>";
+      banner.innerHTML = "✔ All active links up<small>Updated " + ago(d.updated) + note + "</small>";
     }
     $("links").innerHTML = d.isps.map(i =>
       '<div class="row ' + i.status + '"><span class="dot"></span>' +
-      '<div class="name">' + i.site + " · " + i.name + "<span>since " + fmt(i.since) + "</span></div>" +
+      '<div class="name">' + i.site + " · " + i.name + "<span>" + (i.status === "PAUSED" && i.paused_until ? "paused until " + fmt(i.paused_until) : "since " + fmt(i.since)) + "</span></div>" +
       '<span class="lat">' + (i.latency_ms == null ? "–" : i.latency_ms + " ms") + "</span>" +
-      '<span class="tag">' + i.status + "</span></div>").join("");
+      '<span class="tag">' + (i.status === "WAIT" ? "CHECKING" : i.status) + "</span></div>").join("");
     $("events").innerHTML = d.events.length
       ? d.events.map(e => "<li><b class='" + e.event + "'>" + e.event + "</b> " + e.site + " " + e.isp +
           ' <span class="empty">· ' + fmt(e.time) + "</span></li>").join("")
