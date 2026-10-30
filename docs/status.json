@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30T18:02:26+05:30",
+  "updated": "2026-10-30T18:02:33+05:30",
   "interval": 30,
   "paused_all": false,
   "isps": [
@@ -35,10 +35,9 @@
     {
       "site": "Kodiyathur",
       "name": "BSNL",
-      "status": "PAUSED",
+      "status": "DOWN",
       "latency_ms": null,
-      "since": "2026-10-30T17:55:21+05:30",
-      "paused_until": "2026-10-30T18:25:21+05:30"
+      "since": "2026-10-30T18:02:33+05:30"
     },
     {
       "site": "Kodiyathur",
@@ -49,6 +48,12 @@
     }
   ],
   "events": [
+    {
+      "time": "2026-10-30T18:02:33+05:30",
+      "site": "Kodiyathur",
+      "isp": "BSNL",
+      "event": "DOWN"
+    },
     {
       "time": "2026-10-30T17:55:16+05:30",
       "site": "Kodiyathur",
