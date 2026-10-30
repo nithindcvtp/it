@@ -36,11 +36,31 @@ const $ = id => document.getElementById(id);
 const fmt = t => new Date(t).toLocaleString();
 const ago = t => { const m = Math.round((Date.now() - new Date(t)) / 60000); return m < 1 ? "just now" : m + " min ago"; };
 
+// Live source: GitHub Pages can lag 1-3 min behind a push, but the raw file in the repo
+// is current the moment the push lands. Read both and show whichever is newer.
+const RAW_PATH = "docs/status.json";   // path of status.json inside the repo
+function rawUrl() {
+  const h = location.hostname;
+  if (!h.endsWith(".github.io")) return null;          // custom domain: use Pages copy only
+  const owner = h.split(".")[0];
+  const first = location.pathname.split("/").filter(Boolean)[0];
+  const repo = first && !first.includes(".") ? first : owner + ".github.io";
+  return "https://raw.githubusercontent.com/" + owner + "/" + repo + "/HEAD/" + RAW_PATH;
+}
+const RAW = rawUrl();
+async function getJSON(url) {
+  try {
+    const r = await fetch(url + "?t=" + Date.now(), {cache: "no-store"});
+    return r.ok ? await r.json() : null;
+  } catch (e) { return null; }
+}
+
 async function load() {
   const banner = $("banner");
   try {
-    const r = await fetch("status.json?t=" + Date.now(), {cache: "no-store"});
-    const d = await r.json();
+    const got = await Promise.all([getJSON("status.json"), RAW ? getJSON(RAW) : null]);
+    const d = got.filter(Boolean).sort((a, b) => new Date(b.updated) - new Date(a.updated))[0];
+    if (!d) throw new Error("no status");
     const staleMin = Math.max(20, ((d.interval || 30) * 3) / 60 + 2);
     const stale = (Date.now() - new Date(d.updated)) > staleMin * 60000;
     const down = d.isps.filter(i => i.status === "DOWN");
@@ -79,7 +99,9 @@ async function load() {
     banner.innerHTML = "Status unavailable<small>status.json not found or unreadable</small>";
   }
 }
-load(); setInterval(load, 30000);
+load();
+setInterval(() => { if (!document.hidden) load(); }, 10000);      // refresh every 10 s
+document.addEventListener("visibilitychange", () => { if (!document.hidden) load(); });
 </script>
 </body>
 </html>
