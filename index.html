@@ -47,9 +47,13 @@ async function load() {
     const paused = d.isps.filter(i => i.status === "PAUSED").length;
     const waiting = d.isps.filter(i => i.status === "WAIT").length;
     const note = paused ? " · " + paused + " paused" : "";
+    const allPaused = d.paused_all || (d.isps.length > 0 && paused === d.isps.length);
     if (stale) {
       banner.style.background = "#888";
       banner.innerHTML = "Monitor offline?<small>No update since " + fmt(d.updated) + " (" + ago(d.updated) + ")</small>";
+    } else if (allPaused) {
+      banner.style.background = "#3b6fd4";
+      banner.innerHTML = "⏸ Monitoring paused<small>Updated " + ago(d.updated) + "</small>";
     } else if (down.length) {
       banner.style.background = "var(--down)";
       banner.innerHTML = "⚠ DOWN: " + down.map(i => i.site + " " + i.name).join(", ") +
