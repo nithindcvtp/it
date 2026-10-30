@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30T18:19:41+05:30",
+  "updated": "2026-10-30T18:19:46+05:30",
   "interval": 30,
   "paused_all": false,
   "isps": [
@@ -20,9 +20,9 @@
     {
       "site": "Calicut",
       "name": "JIO",
-      "status": "DOWN",
+      "status": "PAUSED",
       "latency_ms": null,
-      "since": "2026-10-30T18:19:41+05:30"
+      "since": "2026-10-30T18:19:46+05:30"
     },
     {
       "site": "Calicut",
