@@ -30,6 +30,7 @@ li b.DOWN{color:var(--down)}li b.RESTORED{color:var(--up)}
   <div id="banner">Loading…</div>
   <h2>Links</h2><div id="links"></div>
   <h2>Recent events</h2><ul id="events"><li class="empty">No events yet</li></ul>
+  <p id="src" class="empty" style="font-size:.75rem;margin-top:18px"></p>
 </main>
 <script>
 const $ = id => document.getElementById(id);
@@ -61,6 +62,10 @@ async function load() {
     const got = await Promise.all([getJSON("status.json"), RAW ? getJSON(RAW) : null]);
     const d = got.filter(Boolean).sort((a, b) => new Date(b.updated) - new Date(a.updated))[0];
     if (!d) throw new Error("no status");
+    const via = d === got[1] ? "live repo" : (RAW ? "GitHub Pages copy (live repo unreachable or older)" : "GitHub Pages copy");
+    const age = k => got[k] ? Math.round((Date.now() - new Date(got[k].updated)) / 1000) + "s old" : "unavailable";
+    $("src").textContent = "Source: " + via + " · Pages file: " + age(0) + " · repo file: " + (RAW ? age(1) : "n/a") +
+      " · page refreshed " + new Date().toLocaleTimeString();
     const staleMin = Math.max(20, ((d.interval || 30) * 3) / 60 + 2);
     const stale = (Date.now() - new Date(d.updated)) > staleMin * 60000;
     const down = d.isps.filter(i => i.status === "DOWN");
