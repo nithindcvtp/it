@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31T18:08:43+05:30",
+  "updated": "2026-10-31T18:09:45+05:30",
   "interval": 30,
   "paused_all": false,
   "isps": [
@@ -34,19 +34,25 @@
     {
       "site": "Kodiyathur",
       "name": "BSNL",
-      "status": "DOWN",
-      "latency_ms": null,
-      "since": "2026-10-31T18:08:43+05:30"
+      "status": "UP",
+      "latency_ms": 84,
+      "since": "2026-10-31T18:09:45+05:30"
     },
     {
       "site": "Kodiyathur",
       "name": "KERALA VISION",
       "status": "UP",
-      "latency_ms": 39,
+      "latency_ms": 38,
       "since": "2026-10-30T18:19:41+05:30"
     }
   ],
   "events": [
+    {
+      "time": "2026-10-31T18:09:45+05:30",
+      "site": "Kodiyathur",
+      "isp": "BSNL",
+      "event": "RESTORED"
+    },
     {
       "time": "2026-10-31T18:08:43+05:30",
       "site": "Kodiyathur",
