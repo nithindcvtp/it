@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04T02:35:03+05:30",
+  "updated": "2026-11-04T02:45:16+05:30",
   "interval": 300,
   "isps": [
     {
@@ -7,7 +7,7 @@
       "name": "BSNL",
       "ip": "117.247.180.184",
       "status": "UP",
-      "latency_ms": 2,
+      "latency_ms": 1,
       "since": "2026-11-02T09:07:29+05:30"
     },
     {
@@ -47,7 +47,7 @@
       "name": "KERALA VISION",
       "ip": "103.190.195.129",
       "status": "UP",
-      "latency_ms": 38,
+      "latency_ms": 37,
       "since": "2026-11-02T09:07:29+05:30"
     }
   ],
