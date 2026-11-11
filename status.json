@@ -1,14 +1,14 @@
 {
-  "updated": "2026-11-12T02:37:03+05:30",
+  "updated": "2026-11-12T02:42:09+05:30",
   "interval": 300,
   "isps": [
     {
       "site": "Calicut",
       "name": "BSNL",
       "ip": "117.247.180.184",
-      "status": "DOWN",
-      "latency_ms": null,
-      "since": "2026-11-12T02:26:37+05:30"
+      "status": "UP",
+      "latency_ms": 1,
+      "since": "2026-11-12T02:42:09+05:30"
     },
     {
       "site": "Calicut",
@@ -39,20 +39,32 @@
       "site": "Kodiyathur",
       "name": "BSNL",
       "ip": "117.247.179.119",
-      "status": "DOWN",
-      "latency_ms": null,
-      "since": "2026-11-12T02:26:37+05:30"
+      "status": "UP",
+      "latency_ms": 90,
+      "since": "2026-11-12T02:42:09+05:30"
     },
     {
       "site": "Kodiyathur",
       "name": "KERALA VISION",
       "ip": "103.190.195.129",
       "status": "UP",
-      "latency_ms": 11,
+      "latency_ms": 31,
       "since": "2026-11-11T16:50:24+05:30"
     }
   ],
   "events": [
+    {
+      "time": "2026-11-12T02:42:09+05:30",
+      "site": "Kodiyathur",
+      "isp": "BSNL",
+      "event": "RESTORED"
+    },
+    {
+      "time": "2026-11-12T02:42:09+05:30",
+      "site": "Calicut",
+      "isp": "BSNL",
+      "event": "RESTORED"
+    },
     {
       "time": "2026-11-12T02:26:37+05:30",
       "site": "Kodiyathur",
