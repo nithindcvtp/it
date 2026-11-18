@@ -1,11 +1,10 @@
 {
-  "updated": "2026-11-18T12:01:51+05:30",
+  "updated": "2026-11-18T12:06:49+05:30",
   "interval": 300,
   "isps": [
     {
       "site": "Calicut",
       "name": "BSNL",
-      "ip": "117.247.180.184",
       "status": "UP",
       "latency_ms": 1,
       "since": "2026-11-12T02:42:09+05:30"
@@ -13,7 +12,6 @@
     {
       "site": "Calicut",
       "name": "VI",
-      "ip": "118.185.93.137",
       "status": "UP",
       "latency_ms": 1,
       "since": "2026-11-11T16:50:24+05:30"
@@ -21,7 +19,6 @@
     {
       "site": "Calicut",
       "name": "JIO",
-      "ip": "115.246.242.210",
       "status": "PAUSED",
       "latency_ms": null,
       "since": "2026-11-18T12:01:51+05:30"
@@ -29,7 +26,6 @@
     {
       "site": "Calicut",
       "name": "ASIANTE",
-      "ip": "202.164.150.19",
       "status": "UP",
       "latency_ms": 1,
       "since": "2026-11-11T16:50:24+05:30"
@@ -37,17 +33,15 @@
     {
       "site": "Kodiyathur",
       "name": "BSNL",
-      "ip": "117.247.179.119",
       "status": "UP",
-      "latency_ms": 33,
+      "latency_ms": 26,
       "since": "2026-11-17T08:14:33+05:30"
     },
     {
       "site": "Kodiyathur",
       "name": "KERALA VISION",
-      "ip": "103.190.195.129",
       "status": "UP",
-      "latency_ms": 40,
+      "latency_ms": 36,
       "since": "2026-11-13T10:43:34+05:30"
     }
   ],
