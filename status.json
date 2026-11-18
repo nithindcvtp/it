@@ -1,12 +1,12 @@
 {
-  "updated": "2026-11-18T12:06:49+05:30",
+  "updated": "2026-11-18T12:17:00+05:30",
   "interval": 300,
   "isps": [
     {
       "site": "Calicut",
       "name": "BSNL",
       "status": "UP",
-      "latency_ms": 1,
+      "latency_ms": 16,
       "since": "2026-11-12T02:42:09+05:30"
     },
     {
@@ -34,14 +34,14 @@
       "site": "Kodiyathur",
       "name": "BSNL",
       "status": "UP",
-      "latency_ms": 26,
+      "latency_ms": 22,
       "since": "2026-11-17T08:14:33+05:30"
     },
     {
       "site": "Kodiyathur",
       "name": "KERALA VISION",
       "status": "UP",
-      "latency_ms": 36,
+      "latency_ms": 10,
       "since": "2026-11-13T10:43:34+05:30"
     }
   ],
