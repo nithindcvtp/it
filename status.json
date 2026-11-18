@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18T23:30:08+05:30",
+  "updated": "2026-11-18T23:40:21+05:30",
   "interval": 300,
   "isps": [
     {
@@ -41,7 +41,7 @@
       "site": "Kodiyathur",
       "name": "KERALA VISION",
       "status": "UP",
-      "latency_ms": 11,
+      "latency_ms": 28,
       "since": "2026-11-13T10:43:34+05:30"
     }
   ],
