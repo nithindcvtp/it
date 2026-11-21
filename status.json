@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-21T17:27:21+05:30",
+  "updated": "2026-11-21T17:27:23+05:30",
   "interval": 300,
   "isps": [
     {
       "site": "Calicut",
       "name": "BSNL",
-      "status": "WAIT",
-      "latency_ms": null,
-      "since": "2026-11-21T17:27:18+05:30"
+      "status": "UP",
+      "latency_ms": 1,
+      "since": "2026-11-21T17:27:23+05:30"
     },
     {
       "site": "Calicut",
       "name": "VI",
-      "status": "WAIT",
-      "latency_ms": null,
-      "since": "2026-11-21T17:27:18+05:30"
+      "status": "UP",
+      "latency_ms": 1,
+      "since": "2026-11-21T17:27:23+05:30"
     },
     {
       "site": "Calicut",
@@ -26,23 +26,23 @@
     {
       "site": "Calicut",
       "name": "ASIANTE",
-      "status": "WAIT",
-      "latency_ms": null,
-      "since": "2026-11-21T17:27:18+05:30"
+      "status": "UP",
+      "latency_ms": 1,
+      "since": "2026-11-21T17:27:23+05:30"
     },
     {
       "site": "Kodiyathur",
       "name": "BSNL",
-      "status": "WAIT",
-      "latency_ms": null,
-      "since": "2026-11-21T17:27:18+05:30"
+      "status": "UP",
+      "latency_ms": 3,
+      "since": "2026-11-21T17:27:23+05:30"
     },
     {
       "site": "Kodiyathur",
       "name": "KERALA VISION",
-      "status": "WAIT",
-      "latency_ms": null,
-      "since": "2026-11-21T17:27:18+05:30"
+      "status": "UP",
+      "latency_ms": 37,
+      "since": "2026-11-21T17:27:23+05:30"
     }
   ],
   "events": []
