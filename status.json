@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21T23:57:34+05:30",
+  "updated": "2026-11-22T00:07:44+05:30",
   "interval": 300,
   "isps": [
     {
@@ -34,14 +34,14 @@
       "site": "Kodiyathur",
       "name": "BSNL",
       "status": "UP",
-      "latency_ms": 22,
+      "latency_ms": 75,
       "since": "2026-11-21T17:27:23+05:30"
     },
     {
       "site": "Kodiyathur",
       "name": "KERALA VISION",
       "status": "UP",
-      "latency_ms": 29,
+      "latency_ms": 0,
       "since": "2026-11-21T17:27:23+05:30"
     }
   ],
