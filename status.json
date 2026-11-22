@@ -1,12 +1,12 @@
 {
-  "updated": "2026-11-22T21:47:05+05:30",
+  "updated": "2026-11-22T21:57:13+05:30",
   "interval": 300,
   "isps": [
     {
       "site": "Calicut",
       "name": "BSNL",
       "status": "UP",
-      "latency_ms": 1,
+      "latency_ms": 2,
       "since": "2026-11-21T17:27:23+05:30"
     },
     {
@@ -34,7 +34,7 @@
       "site": "Kodiyathur",
       "name": "BSNL",
       "status": "UP",
-      "latency_ms": 8,
+      "latency_ms": 87,
       "since": "2026-11-21T17:27:23+05:30"
     },
     {
