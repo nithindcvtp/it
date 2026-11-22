@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T18:54:38+05:30",
+  "updated": "2026-11-22T19:04:46+05:30",
   "interval": 300,
   "isps": [
     {
@@ -13,7 +13,7 @@
       "site": "Calicut",
       "name": "VI",
       "status": "UP",
-      "latency_ms": 1,
+      "latency_ms": 3,
       "since": "2026-11-21T17:27:23+05:30"
     },
     {
@@ -27,14 +27,14 @@
       "site": "Calicut",
       "name": "ASIANTE",
       "status": "UP",
-      "latency_ms": 1,
+      "latency_ms": 3,
       "since": "2026-11-21T17:27:23+05:30"
     },
     {
       "site": "Kodiyathur",
       "name": "BSNL",
       "status": "UP",
-      "latency_ms": 86,
+      "latency_ms": 9,
       "since": "2026-11-21T17:27:23+05:30"
     },
     {
